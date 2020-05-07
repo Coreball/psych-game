@@ -1,0 +1,167 @@
+{
+  "rooms": [
+    {
+      "id": "bedroom",
+      "description": "You are in the bedroom. The date for your departure to Ithaca has finally come. You love your family, but can't wait to leave. However, you must first be a responsible parent and drop the kid off at school. And don't forget your luggage or toothbrush!",
+      "score": 0,
+      "exits": [
+        {
+          "name": "bathroom",
+          "room id": "bathroom"
+        },
+        {
+          "name": "kitchen",
+          "room id": "kitchen"
+        },
+        {
+          "name": "downstairs",
+          "room id": "kitchen"
+        }
+      ]
+    },
+    {
+      "id": "bathroom",
+      "description": "You are in the bathroom. You should really clean it at some point, don't make your spouse do everything.",
+      "score": 5,
+      "exits": [
+        {
+          "name": "bedroom",
+          "room id": "bedroom"
+        },
+        {
+          "name": "kitchen",
+          "room id": "kitchen"
+        },
+        {
+          "name": "downstairs",
+          "room id": "kitchen"
+        }
+      ]
+    },
+    {
+      "id": "kitchen",
+      "description": "You are in the kitchen. Your child has been waiting for a long time and is worried they'll be late for school! At least your spouse has already ensured the child is fed and watered.",
+      "score": 5,
+      "exits": [
+        {
+          "name": "bedroom",
+          "room id": "bedroom"
+        },
+        {
+          "name": "upstairs",
+          "room id": "bedroom"
+        },
+        {
+          "name": "bathroom",
+          "room id": "bathroom"
+        },
+        {
+          "name": "garage",
+          "room id": "garage"
+        },
+        {
+          "name": "car",
+          "room id": "garage"
+        }
+      ]
+    },
+    {
+      "id": "garage",
+      "description": "You are now in the garage. The car is ready and waiting to take you wherever you need to go. Please do not hit anyone.",
+      "score": 5,
+      "exits": [
+        {
+          "name": "car",
+          "room id": "car"
+        },
+        {
+          "name": "drive",
+          "room id": "car"
+        },
+        {
+          "name": "kitchen",
+          "room id": "kitchen"
+        },
+        {
+          "name": "inside",
+          "room id": "kitchen"
+        }
+      ]
+    },
+    {
+      "id": "school",
+      "description": "You have arrived at your kiddo's school and get out of the car. It brings back memories of your own childhood. Are those good or bad? Drop your kid off and wish them good luck.",
+      "score": 10,
+      "exits": [
+        {
+          "name": "car",
+          "room id": "car"
+        },
+        {
+          "name": "drive",
+          "room id": "car"
+        }
+      ]
+    },
+    {
+      "id": "airport",
+      "description": "You are standing at the entrance at the airport. You did what you needed to, right? You are literally shaking with excitement and wonder how odd you must appear to strangers.",
+      "score": 10,
+      "exits": [
+        {
+          "name": "car",
+          "room id": "car"
+        },
+        {
+          "name": "drive",
+          "room id": "car"
+        }
+      ]
+    },
+    {
+      "id": "car",
+      "description": "You're in the car. Vroom vroom. Where to?",
+      "score": 0,
+      "exits": [
+        {
+          "name": "home",
+          "room id": "garage"
+        },
+        {
+          "name": "garage",
+          "room id": "garage"
+        },
+        {
+          "name": "school",
+          "room id": "school"
+        },
+        {
+          "name": "airport",
+          "room id": "airport"
+        }
+      ]
+    }
+  ],
+  "start room": "bedroom",
+  "items": [
+    {
+      "thing": "luggage",
+      "start": "bedroom",
+      "target": "airport",
+      "score": 10
+    },
+    {
+      "thing": "toothbrush",
+      "start": "bathroom",
+      "target": "airport",
+      "score": 10
+    },
+    {
+      "thing": "child",
+      "start": "kitchen",
+      "target": "school",
+      "score": 10
+    }
+  ],
+  "win message": "You are finally ready to check in and hop on the plane. Try out part two of this adventure, airport.json!"
+}

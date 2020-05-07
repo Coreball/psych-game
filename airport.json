@@ -1,0 +1,162 @@
+{
+  "rooms": [
+    {
+      "id": "outside",
+      "description": "You are standing outside the airport. The flight leaves soon, make sure to check in and drop off any checked luggage at the counter. You have forgotten to brush your teeth and are planning to do so in the flying toilet we call an airplane bathroom.",
+      "score": 0,
+      "exits": [
+        {
+          "name": "check in",
+          "room id": "checkin"
+        },
+        {
+          "name": "checkin",
+          "room id": "checkin"
+        },
+        {
+          "name": "inside",
+          "room id": "checkin"
+        }
+      ]
+    },
+    {
+      "id": "checkin",
+      "description": "You are now at the check in counter. Whichever airline you picked this time, hope they don't lose your stuff. Some of it gets lost at the baggage claim.",
+      "score": 5,
+      "exits": [
+        {
+          "name": "security",
+          "room id": "security"
+        },
+        {
+          "name": "outside",
+          "room id": "outside"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "description": "You are going through security. Security has always made you nervous and anxious, even though you don't have anything to hide. The people could certainly be a lot nicer.",
+      "score": 5,
+      "exits": [
+        {
+          "name": "gate",
+          "room id": "gate"
+        },
+        {
+          "name": "gates",
+          "room id": "gate"
+        },
+        {
+          "name": "food",
+          "room id": "food"
+        },
+        {
+          "name": "food court",
+          "room id": "food"
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "description": "You're now at the gate! The airplane leaves pretty soon, but if you really wanted to you could explore some other parts of this airport.",
+      "score": 5,
+      "exits": [
+        {
+          "name": "food",
+          "room id": "food"
+        },
+        {
+          "name": "food court",
+          "room id": "food"
+        },
+        {
+          "name": "baggage",
+          "room id": "baggage"
+        },
+        {
+          "name": "baggage claim",
+          "room id": "baggage"
+        },
+        {
+          "name": "airplane",
+          "room id": "airplane"
+        },
+        {
+          "name": "plane",
+          "room id": "airplane"
+        },
+        {
+          "name": "board",
+          "room id": "airplane"
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "description": "You are at the food court. Some food smells pretty good. Some smells pretty bad. Your kid would eat any of it though.",
+      "score": 10,
+      "exits": [
+        {
+          "name": "gate",
+          "room id": "gate"
+        },
+        {
+          "name": "gates",
+          "room id": "gate"
+        }
+      ]
+    },
+    {
+      "id": "airplane",
+      "description": "You got on the plane. Remember to always put your carry on backpack in the overhead compartment. Watch the safety video. The cabin doors close. Try not to get scared of flying.",
+      "score": 10,
+      "exits": []
+    },
+    {
+      "id": "baggage",
+      "description": "You are at the baggage claim? Wait, I thought you were supposed to be getting on a flight! To get back in you have to start the process all over again.",
+      "score": 15,
+      "exits": [
+        {
+          "name": "outside",
+          "room id": "outside"
+        }
+      ]
+    }
+  ],
+  "start room": "outside",
+  "items": [
+    {
+      "thing": "luggage",
+      "start": "outside",
+      "target": "checkin",
+      "score": 10
+    },
+    {
+      "thing": "toothbrush",
+      "start": "outside",
+      "target": "airplane",
+      "score": 10
+    },
+    {
+      "thing": "pizza",
+      "start": "food",
+      "target": "gate",
+      "score": 20
+    },
+    {
+      "thing": "guitar",
+      "start": "baggage",
+      "target": "checkin",
+      "score": 30
+    },
+    {
+      "thing": "baby",
+      "start": "baggage",
+      "target": "airplane",
+      "score": 100
+    }
+  ],
+  "win message": "Now that you've taken care of business, you are free to have fun and finally unwind!"
+}
