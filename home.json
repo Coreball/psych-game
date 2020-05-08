@@ -143,25 +143,5 @@
     }
   ],
   "start room": "bedroom",
-  "items": [
-    {
-      "thing": "luggage",
-      "start": "bedroom",
-      "target": "airport",
-      "score": 10
-    },
-    {
-      "thing": "toothbrush",
-      "start": "bathroom",
-      "target": "airport",
-      "score": 10
-    },
-    {
-      "thing": "child",
-      "start": "kitchen",
-      "target": "school",
-      "score": 10
-    }
-  ],
   "win message": "You are finally ready to check in and hop on the plane. Try out part two of this adventure, airport.json!"
 }

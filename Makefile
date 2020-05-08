@@ -1,4 +1,4 @@
-MODULES=adventure command state main
+MODULES=adventure state input render main
 OBJECTS=$(MODULES:=.cmo)
 MLS=$(MODULES:=.ml)
 MLIS=$(MODULES:=.mli)

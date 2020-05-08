@@ -15,20 +15,11 @@ type room_id = string
 (** The type of choice names. *)
 type choice_name = string
 
-(** The type of point identifiers. *)
-type points = int
-
-(** The type of item identifiers. *)
-type item_id = string
-
 (** Raised when an unknown room is encountered. *)
 exception UnknownRoom of room_id
 
 (** Raised when an unknown choice is encountered. *)
 exception UnknownChoice of choice_name
-
-(** Raised when an unknown item is encountered. *)
-exception UnknownItem of item_id
 
 (** [from_json j] is the adventure that [j] represents.
     Requires: [j] is a valid JSON adventure representation. *)
@@ -42,7 +33,7 @@ val start_room : t -> room_id
     adventure [a]. *)
 val room_ids : t -> room_id list
 
-(** [description a r] is the description of room [r] in adventure [a]. 
+(** [description a r] is the description of room [r] in adventure [a].
     Raises [UnknownRoom r] if [r] is not a room identifier in [a]. *)
 val description : t -> room_id -> string
 
@@ -50,17 +41,7 @@ val description : t -> room_id -> string
     Raises [UnknownRoom r] if [r] is not a room identifier in [a]. *)
 val score : t -> room_id -> int
 
-(** [items a] is the list of (thing, start) for items in adventure [a]. *)
-val items : t -> (item_id * room_id) list
-
-(** [item_target a i] is the target room id of [i] in adventure [a]. *)
-val item_target : t -> item_id -> room_id
-
-(** [item_pts a i] is the points score of item [i] in adventure [a].
-    Raises [UnknownItem i] if [i] is not an item in [a]. *)
-val item_pts : t -> item_id -> int
-
-(** [choices a r] is a set-like list of all choice names from room [r] in 
+(** [choices a r] is a set-like list of all choice names from room [r] in
     adventure [a].
     Raises [UnknownRoom r] if [r] is not a room identifier in [a]. *)
 val choices : t -> room_id -> choice_name list

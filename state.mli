@@ -7,9 +7,9 @@
 *)
 
 (** The abstract type of values representing the game state. *)
-type t 
+type t
 
-(** [init_state a] is the initial state of the game when playing adventure [a]. 
+(** [init_state a] is the initial state of the game when playing adventure [a].
     In that state the adventurer is currently located in the starting room,
     and they have visited only that room. *)
 val init_state : Adventure.t -> t
@@ -18,22 +18,13 @@ val init_state : Adventure.t -> t
     currently is located in state [st]. *)
 val current_room_id : t -> string
 
-(** [visited st] is a set-like list of the room identifiers the adventurer has 
+(** [visited st] is a set-like list of the room identifiers the adventurer has
     visited in state [st]. The adventurer has visited a room [rm] if their
     current room location is or has ever been [rm]. *)
 val visited : t -> string list
 
-(** [current_inventory st] is the list of item ids in the inventory *)
-val current_inventory : t -> string list
-
-(** [current_room_items st] is the list of item ids in the current room *)
-val current_room_items : t -> string list
-
 (** [calc_score adv st] is the calculated score of [st] in [adv] *)
 val calc_score : Adventure.t -> t -> int
-
-(** [all_items_correct adv st] is true if all items are in the target. *)
-val all_items_correct : Adventure.t -> t -> bool
 
 (** The type representing the result of an attempted movement. *)
 type result = Legal of t | Illegal
@@ -45,9 +36,3 @@ type result = Legal of t | Illegal
     the result is [Illegal].
     Effects: none.  [go] is not permitted to do any printing. *)
 val go : Adventure.choice_name -> Adventure.t -> t -> result
-
-(** [take item st] is [st] after trying to take [item] from the curr room *)
-val take : string -> t -> result
-
-(** [drop item st] is [st] dropping [item] in current room *)
-val drop : string -> t -> result
