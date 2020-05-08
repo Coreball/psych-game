@@ -1,6 +1,17 @@
 {
   "rooms": [
     {
+      "id": "intro",
+      "description": "Welcome to game <1> <2> <3> <4>",
+      "score": 0,
+      "choices": [
+        {
+          "name": "start",
+          "room id": "bedroom"
+        }
+      ]
+    },
+    {
       "id": "bedroom",
       "description": "You are in the bedroom. The date for your departure to Ithaca has finally come. You love your family, but can't wait to leave. However, you must first be a responsible parent and drop the kid off at school. And don't forget your luggage or toothbrush!",
       "score": 0,
@@ -30,118 +41,15 @@
         },
         {
           "name": "kitchen",
-          "room id": "kitchen"
+          "room id": "bedroom"
         },
         {
           "name": "downstairs",
-          "room id": "kitchen"
-        }
-      ]
-    },
-    {
-      "id": "kitchen",
-      "description": "You are in the kitchen. Your child has been waiting for a long time and is worried they'll be late for school! At least your spouse has already ensured the child is fed and watered.",
-      "score": 5,
-      "choices": [
-        {
-          "name": "bedroom",
           "room id": "bedroom"
-        },
-        {
-          "name": "upstairs",
-          "room id": "bedroom"
-        },
-        {
-          "name": "bathroom",
-          "room id": "bathroom"
-        },
-        {
-          "name": "garage",
-          "room id": "garage"
-        },
-        {
-          "name": "car",
-          "room id": "garage"
-        }
-      ]
-    },
-    {
-      "id": "garage",
-      "description": "You are now in the garage. The car is ready and waiting to take you wherever you need to go. Please do not hit anyone.",
-      "score": 5,
-      "choices": [
-        {
-          "name": "car",
-          "room id": "car"
-        },
-        {
-          "name": "drive",
-          "room id": "car"
-        },
-        {
-          "name": "kitchen",
-          "room id": "kitchen"
-        },
-        {
-          "name": "inside",
-          "room id": "kitchen"
-        }
-      ]
-    },
-    {
-      "id": "school",
-      "description": "You have arrived at your kiddo's school and get out of the car. It brings back memories of your own childhood. Are those good or bad? Drop your kid off and wish them good luck.",
-      "score": 10,
-      "choices": [
-        {
-          "name": "car",
-          "room id": "car"
-        },
-        {
-          "name": "drive",
-          "room id": "car"
-        }
-      ]
-    },
-    {
-      "id": "airport",
-      "description": "You are standing at the entrance at the airport. You did what you needed to, right? You are literally shaking with excitement and wonder how odd you must appear to strangers.",
-      "score": 10,
-      "choices": [
-        {
-          "name": "car",
-          "room id": "car"
-        },
-        {
-          "name": "drive",
-          "room id": "car"
-        }
-      ]
-    },
-    {
-      "id": "car",
-      "description": "You're in the car. Vroom vroom. Where to?",
-      "score": 0,
-      "choices": [
-        {
-          "name": "home",
-          "room id": "garage"
-        },
-        {
-          "name": "garage",
-          "room id": "garage"
-        },
-        {
-          "name": "school",
-          "room id": "school"
-        },
-        {
-          "name": "airport",
-          "room id": "airport"
         }
       ]
     }
   ],
-  "start room": "bedroom",
+  "start room": "intro",
   "win message": "You are finally ready to check in and hop on the plane. Try out part two of this adventure, airport.json!"
 }

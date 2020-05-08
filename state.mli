@@ -1,4 +1,4 @@
-(** 
+(**
    Representation of dynamic adventure state.
 
    This module represents the state of an adventure as it is being played,
@@ -13,6 +13,9 @@ type t
     In that state the adventurer is currently located in the starting room,
     and they have visited only that room. *)
 val init_state : Adventure.t -> t
+
+(** [people_names st] is the list of people *)
+val people_names : t -> string list
 
 (** [current_room_id st] is the identifier of the room in which the adventurer
     currently is located in state [st]. *)
