@@ -21,6 +21,7 @@ type room = {
 }
 
 type t = {
+  header : string;
   rooms : room list;
   start_room : room_id;
   win_msg : string;
@@ -42,6 +43,7 @@ let room_of_json j = {
 
 (** [adventure_of_json j] is the adventure that [j] represents. *)
 let adventure_of_json j = {
+  header = j |> member "header" |> to_string;
   rooms = j |> member "rooms" |> to_list |> List.map room_of_json;
   start_room = j |> member "start room" |> to_string;
   win_msg = j |> member "win message" |> to_string;
@@ -92,6 +94,9 @@ let next_rooms adv room =
     List.map (fun choice -> choice.room_id) (room_wid adv room).choices
     |> List.sort_uniq compare
   else raise (UnknownRoom room)
+
+let header adv =
+  adv.header
 
 let win_msg adv =
   adv.win_msg

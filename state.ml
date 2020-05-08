@@ -16,7 +16,8 @@ let move_room room st = {
 }
 
 let init_state adv =
-  let rand_names = List.init 4 (fun _ -> rand_fullname ()) in
+  let rand_names = Random.self_init ();
+    List.init 4 (fun _ -> rand_partname ()) in
   move_room (start_room adv) {names=rand_names; curr = ""; hist = []}
 
 let people_names st =

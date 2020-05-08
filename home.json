@@ -2,54 +2,188 @@
   "rooms": [
     {
       "id": "intro",
-      "description": "Welcome to game <1> <2> <3> <4>",
+      "description": "Welcome to psych-game by Changyuan Lin!\n\nIn this game, you'll guide four randomly generated kids to escape a deserted island. Are they part of some research experiment? Or truly lost and abandoned? Who knows?\n\nYou will be presented with a series of options at the bottom of the paragraph. Use A and D to move the selection left and right, and press SPACE to confirm. Press Q to quit.",
       "score": 0,
       "choices": [
         {
           "name": "start",
-          "room id": "bedroom"
+          "room id": "names"
         }
       ]
     },
     {
-      "id": "bedroom",
-      "description": "You are in the bedroom. The date for your departure to Ithaca has finally come. You love your family, but can't wait to leave. However, you must first be a responsible parent and drop the kid off at school. And don't forget your luggage or toothbrush!",
+      "id": "names",
+      "description": "Here they are!\n\nTheir names are <1>, <2>, <3>, and <4>.\n\nGreat names, right?",
       "score": 0,
       "choices": [
         {
-          "name": "bathroom",
-          "room id": "bathroom"
+          "name": "no",
+          "room id": "sf"
         },
         {
-          "name": "kitchen",
-          "room id": "kitchen"
-        },
-        {
-          "name": "downstairs",
-          "room id": "kitchen"
+          "name": "yes",
+          "room id": "sf"
         }
       ]
     },
     {
-      "id": "bathroom",
-      "description": "You are in the bathroom. You should really clean it at some point, don't make your spouse do everything.",
-      "score": 5,
+      "id": "sf",
+      "description": "It's been a number of days since the children arrived. Starting with only their clothes and a handful of personal items, they've had to find a way to make shelter and stay warm during the night. Getting enough water and food proves a challenge, but luckily some of the children are better prepared than others. <1>, in particular, is an expert at tying knots from his time in the boy scouts. <2> loves fishing so he's in charge of getting fish. <3> is an aspiring engineer. And <4>? Well, let's just say that <4> has an amazing personality.\n\nOne night, they decide to make a fire to cook some of the fish that <2> has caught. Naturally, <4> is exceedingly hungry. They elect <1> to try as he's made some fires before. If <4> wants food as fast as possible, should the group stay with <1> or try walking around to find some berries?",
+      "score": 0,
       "choices": [
         {
-          "name": "bedroom",
-          "room id": "bedroom"
+          "name": "stay",
+          "room id": "sf-1"
         },
         {
-          "name": "kitchen",
-          "room id": "bedroom"
+          "name": "try finding other food",
+          "room id": "sf-2"
+        }
+      ]
+    },
+    {
+      "id": "sf-1",
+      "description": "The group stays with <1>, and as he's done it before, watching him actually enhances his performance and he figures it out quicker. If <4> was trying, it would have been another story. <2> cooks some of the fish and they enjoy a good dinner, after which they settle down for the night.",
+      "score": 10,
+      "choices": [
+        {
+          "name": "ok",
+          "room id": "over"
+        }
+      ]
+    },
+    {
+      "id": "sf-2",
+      "description": "The group tries to find some berries. Unfortunately, there aren't really any berries on this island. After roaming around for an hour, they return. <1> asks what took them so long, and when he hears the news he is disappointed as well. The fire is blazing and beautiful. <1> is a bit annoyed he had to use more firewood than usual waiting for them.",
+      "score": 0,
+      "choices": [
+        {
+          "name": "ok",
+          "room id": "over"
+        }
+      ]
+    },
+    {
+      "id": "over",
+      "description": "The next day, <2> and <3> go to gather some more wood, leaving <1> and <4> back at their base. They wonder how many trees there are on Earth. <2> has no idea. <3> uses his super engineering intelligence, and he's like 90% sure that the number of trees is around 20 billion.\n\nWhat's an accurate guess?",
+      "score": 0,
+      "choices": [
+        {
+          "name": "20 billion",
+          "room id": "over-1"
         },
         {
-          "name": "downstairs",
-          "room id": "bedroom"
+          "name": "2 billion",
+          "room id": "over-1"
+        },
+        {
+          "name": "20 million",
+          "room id": "over-1"
+        }
+      ]
+    },
+    {
+      "id": "over-1",
+      "description": "They can't look it up with their phones because they're on a deserted island, but the true number of trees on Earth is approximately 3 trillion. <3>'s big brain knowledge can't save him, even though he was so confident that he was correct. In many cases people overestimate their correctness, but when confronted later they find some excuse for their reasoning. Just admit you don't know, <3>.",
+      "score": 10,
+      "choices": [
+        {
+          "name": "ok",
+          "room id": "norms"
+        }
+      ]
+    },
+    {
+      "id": "norms",
+      "description": "<2> and <3> return to the main group. <1> is trying to convince <4> to go swimming. Everyone has to take a swim test at some point, don't be so scared. <4> is still really reluctant. <1> tries to persuade him by explaining that even when people don't take it their first year, they still have to sign up for a class to learn it eventually, which a lot of people do too. So there's no getting around it. Just go swimming with <1>.\n\nDid <1> make himself more or less convincing?",
+      "score": 0,
+      "choices": [
+        {
+          "name": "more",
+          "room id": "norms-1"
+        },
+        {
+          "name": "less",
+          "room id": "norms-2"
+        }
+      ]
+    },
+    {
+      "id": "norms-1",
+      "description": "<4> resists swimming with <1>. If many people do just put it off, why can't <4> just be like them? It's not unusual for people to not know how to swim, and a lot of people really don't want to either. He's not alone in acting like he does. By telling <4> about the other people who don't swim, <1> inadvertently made <1> a lot less urgent to figure it out.",
+      "score": 0,
+      "choices": [
+        {
+          "name": "ok",
+          "room id": "death"
+        }
+      ]
+    },
+    {
+      "id": "norms-2",
+      "description": "<4> resists swimming with <1>. If many people do just put it off, why can't <4> just be like them? It's not unusual for people to not know how to swim, and a lot of people really don't want to either. He's not alone in acting like he does. Because <1> informed <4> about other people who do the same thing, he has decreased <4>'s motivation.",
+      "score": 10,
+      "choices": [
+        {
+          "name": "ok",
+          "room id": "death"
+        }
+      ]
+    },
+    {
+      "id": "death",
+      "description": "Well, the group goes swimming anyway. Might not be the best move when they're trying to escape a deserted island, but hey, they deserve to have some fun, right? They manage to drag <4> along with them. They have to tell <2> to not bring his fishing net, they can fish another time. The boys have fun. But disaster strikes, and <2> gets stung by a jellyfish. Together, they drag <2> back on shore. The prognosis isn't good. They have no medicine at all, and <1>'s experience with various herbs and plants isn't going to help here. Sadly, <2> dies. Why is there death in this story?? As he's exiting this world, <2> has a moment of calm and peace. It's really not that bad, he says. <3> is still annoyed about losing his guess, but he decides to keep quiet. He has more respect for <2> now that he's gone. <4> uses it as an example to confirm that swimming was a bad idea. He goes wild with this evidence, not recognizing that yes in most cases people can go swimming without getting stung by a sea creature.",
+      "score": 0,
+      "choices": [
+        {
+          "name": "rip",
+          "room id": "leave"
+        },
+        {
+          "name": "i hate jellyfish",
+          "room id": "leave"
+        }
+      ]
+    },
+    {
+      "id": "leave",
+      "description": "Help finally comes. It may be too late for <2>, but the rest are still around. They want to take <2> with them though, or at least give him a proper burial, because that's what people are supposed to do. A government helicopter touches down on the beach and the kids get ready to go. <1> knew it would happen in a helicopter because in all the movies he's watched, shipwrecked sailors always get picked up by a majestic government machine. However, he does not think of the many times when the survivors just perish, since they don't have stories written about them and not many instances come to mind.",
+      "score": 0,
+      "choices": [
+        {
+          "name": "get on!",
+          "room id": "helicopter"
+        },
+        {
+          "name": "stay?",
+          "room id": "lose"
+        }
+      ]
+    },
+    {
+      "id": "helicopter",
+      "description": "<1>, <3>, and <4> board the helicopter. <3> is a little sad. They worked so hard on building up their little base over the past few days, and are having trouble coming to terms with it. But actually, he has just decided nah their time here wasn't worth it at all, without realizing it. He wants to leave, and has unknowingly changed his position about staying accordingly. Meanwhile, <4> sees that he is boarding the helicopter and concludes that he is happy to leave their island paradise.",
+      "score": 10,
+      "choices": [
+        {
+          "name": "press Q to quit",
+          "room id": "helicopter"
+        }
+      ]
+    },
+    {
+      "id": "lose",
+      "description": "<1>, <3>, and <4> decide to stay, strangely enough. They had been hoping for rescue this entire time, but it came and went. As they have chosen to stick around, they realize that they must have never really wanted to leave that much in the first place. I guess this is technically losing the game because the objective was to get the kids off the island. Why make the wrong choice at the last moment?",
+      "score": 100,
+      "choices": [
+        {
+          "name": "press Q to quit",
+          "room id": "lose"
         }
       ]
     }
   ],
   "start room": "intro",
-  "win message": "You are finally ready to check in and hop on the plane. Try out part two of this adventure, airport.json!"
+  "header": "----========[ psych-game! ]========----",
+  "win message": "oops I didn't use this"
 }

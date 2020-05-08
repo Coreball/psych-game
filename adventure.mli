@@ -29,7 +29,7 @@ val from_json : Yojson.Basic.t -> t
     [a]. *)
 val start_room : t -> room_id
 
-(** [room_ids a] is a set-like list of all of the room identifiers in 
+(** [room_ids a] is a set-like list of all of the room identifiers in
     adventure [a]. *)
 val room_ids : t -> room_id list
 
@@ -56,6 +56,9 @@ val next_room : t -> room_id -> choice_name -> room_id
     from [r] in adventure [a].
     Raises [UnknownRoom r] if [r] is not a room identifier in [a].*)
 val next_rooms : t -> room_id -> room_id list
+
+(** [header a] is the header *)
+val header : t -> string
 
 (** [win_msg a] is the win message for adventure [a]. *)
 val win_msg : t -> string

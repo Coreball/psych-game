@@ -4,6 +4,12 @@ open ANSITerminal
 
 let hide_cursor () = printf [] "\027[?25l%!"
 
+let print_header adv =
+  let text = header adv in
+  let x = ((size () |> fst) / 2) - ((String.length text) / 2) in
+  set_cursor x 2;
+  print_string [cyan] text
+
 let print_desc adv current_room ids people =
   let desc = description adv current_room in
   let desc' = List.fold_left2 (fun d i s ->
@@ -15,7 +21,7 @@ let rec print_choices_rec input pos l =
   match l with
   | [] -> ()
   | h::t ->
-    print_string style h; move_cursor 1 0;
+    print_string style h; move_cursor 2 0;
     print_choices_rec input (pos + 1) t
 
 let print_choices input adv current_room =
@@ -26,7 +32,8 @@ let draw input adv st =
   erase Screen;
   hide_cursor ();
   set_cursor 1 1;
-  print_endline (String.concat ", " (people_names st));
+  print_header adv;
+  set_cursor 1 4;
   print_desc adv current_room ["<1>"; "<2>"; "<3>"; "<4>"] (people_names st);
   move_cursor 2 1;
   print_choices input adv current_room
